@@ -13,6 +13,13 @@ var ViewModel = function() {
   }, this);
   this.imgSrc = ko.observable('img/434164568_fea0ad4013_z.jpg');
 
+  this.cats = ko.observableArray([
+        { nickname: 'Tabtab' },
+        { nickname: 'T-Bone' },
+        { nickname: 'Mr. T'},
+        { nickname: 'Tabitha Tab Tabby Catty Cat'}
+  ]);
+
   this.incrementCounter = function() {
     this.clickCount(this.clickCount() + 1);
   };
