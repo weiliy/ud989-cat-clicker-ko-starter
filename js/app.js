@@ -22,13 +22,13 @@ var Cat = function() {
 };
 
 var ViewModel = function() {
+  var self = this;
+
   this.currentCat = ko.observable(new Cat());
 
-  this.incrementCounter = (function(t) {
-    return function() {
-      t.currentCat().clickCount(t.currentCat().clickCount() + 1);
-    };
-  })(this);
+  this.incrementCounter = function() {
+      self.currentCat().clickCount(self.currentCat().clickCount() + 1);
+  };
 };
 
 ko.applyBindings(new ViewModel());
